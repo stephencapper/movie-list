@@ -2,11 +2,10 @@ import React from 'react';
 import MovieTitle from './MovieTitle.jsx';
 
 const MovieList = (props) => {
-  console.log('props movies data :', props.moviesData);
   return (
     <div>
-      <h2>Movie Title</h2>
-      {props.moviesData.map((movie) => {
+      <h2>Movie List</h2>
+      {props.currentMovies.map((movie) => {
         return (<MovieTitle movie={movie}/>);
       } )}
     </div>

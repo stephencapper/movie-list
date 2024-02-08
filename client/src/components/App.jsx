@@ -1,5 +1,6 @@
 import React from 'react';
 import MovieList from './MovieList.jsx';
+import Search from './Search.jsx';
 import { useState } from 'react';
 
 const App = () => {
@@ -11,8 +12,15 @@ const App = () => {
     { title: 'Ex Machina' }
   ];
   const [moviesData, setMoviesData] = useState(exampleMovieData);
+  const [currentMovies, setCurrentMovies] = useState(moviesData);
   return (
-    <MovieList moviesData={moviesData}/>
+    <>
+      <Search
+        setCurrentMovies={setCurrentMovies}
+        moviesData={moviesData}
+      />
+      <MovieList currentMovies={currentMovies}/>
+    </>
   )
 };
 
