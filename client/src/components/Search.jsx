@@ -17,6 +17,7 @@ const Search = (props) => {
         outputMovies.push(movie);
       }
     }
+    props.setWatchedDisplay('AllMovies');
     if(outputMovies.length === 0) {
       props.setCurrentMovies(props.moviesData);
       setSearchError(true);
