@@ -2,7 +2,7 @@ import React from 'react';
 import MovieList from './MovieList.jsx';
 import Search from './Search.jsx';
 import AddMovie from './AddMovie.jsx';
-//import ToggleWatchedDisplay from './ToggleWatchedDisplay.jsx';
+import ToggleWatchedDisplay from './ToggleWatchedDisplay.jsx';
 import { useState } from 'react';
 
 const App = () => {
@@ -23,12 +23,12 @@ const App = () => {
         moviesData={moviesData}
         setWatchedDisplay={setWatchedDisplay}
       />
-      {/* <ToggleWatchedDisplay
+      <ToggleWatchedDisplay
         moviesData={moviesData}
         setCurrentMovies={setCurrentMovies}
         setWatchedDisplay={setWatchedDisplay}
         watchedDisplay={watchedDisplay}
-      /> */}
+      />
       <MovieList
         currentMovies={currentMovies}
         moviesData={moviesData}
@@ -37,7 +37,7 @@ const App = () => {
         watchedDisplay={watchedDisplay}
       />
     </>
-  )
+  );
 };
 
 export default App;
