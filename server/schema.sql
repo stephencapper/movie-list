@@ -1,0 +1,10 @@
+CREATE DATABASE movieList;
+
+USE movieList;
+
+CREATE TABLE movies (
+  id INT NOT NULL AUTO_INCREMENT,
+  title VARCHAR(250) NOT NULL,
+  watched BOOLEAN NOT NULL DEFAULT 0,
+  PRIMARY KEY (id)
+);
