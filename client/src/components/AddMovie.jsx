@@ -15,16 +15,16 @@ const AddMovie = (props) => {
     props.setWatchedDisplay('AllMovies');
     let watched = window.prompt("Have you watched this Movie? Please respond Yes or No", "No");
     if (watched === null || watched.toLowerCase() === 'no') {
-      watched = 'toWatch';
+      watched = false;
     } else {
-      watched = 'watched';
+      watched = true;
     }
     let newMovie = {};
     newMovie.title = titleToAdd;
     newMovie.watched = watched;
     let newMovieArray = [newMovie];
     let newMoviesData = props.moviesData.concat(newMovieArray);
-    props.setMoviesData(newMoviesData);
+    props.setNewMovie(newMovie);
     props.setCurrentMovies(newMoviesData);
   };
   return (

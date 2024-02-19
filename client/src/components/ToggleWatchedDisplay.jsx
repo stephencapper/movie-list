@@ -9,7 +9,7 @@ const ToggleWatchedDisplay = (props) => {
     } else {
       let newCurrentMovies = [];
       for (let movie of props.moviesData) {
-        if (newDisplay === movie.watched) {
+        if ((newDisplay === 'watched' && movie.watched) || (newDisplay === 'toWatch' && !movie.watched)) {
           newCurrentMovies.push(movie);
         }
       }

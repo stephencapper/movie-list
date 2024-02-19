@@ -6,7 +6,5 @@ router.get('', controller.movies.get);
 
 router.post('', controller.movies.post);
 
-router.patch('', controller.movies.patch);
-
 
 module.exports = router;

@@ -2,16 +2,16 @@ import React from 'react';
 
 const WatchedMovie = (props) => {
   const watchedClickHandler = (event) => {
-    let movieWatched = event.target.value === 'watched' ? 'toWatch' : 'watched';
+    let movieWatched = event.target.value === 'watched' ? false : true;
     let movieTitle = props.movie.title;
     let moviesData = props.moviesData.slice(0);
     for (let movie of moviesData) {
       if (movie.title === movieTitle) {
         movie.watched = movieWatched;
+        props.setUpdateMovie(movie);
         break;
       }
     }
-    props.setMoviesData(moviesData);
     if (props.watchedDisplay === 'AllMovies') {
       props.setCurrentMovies(moviesData);
     } else {
@@ -30,8 +30,7 @@ const WatchedMovie = (props) => {
   };
   return (
     <>
-      {props.movie.watched === 'watched' ? <button value="watched" onClick={watchedClickHandler}>Watched</button> : null}
-      {props.movie.watched === 'toWatch' ? <button value="toWatch" onClick={watchedClickHandler}>To watch</button> : null}
+      {props.movie.watched ? <button value="watched" onClick={watchedClickHandler}>Watched</button> : <button value="toWatch" onClick={watchedClickHandler}>To watch</button>}
     </>
   );
 };

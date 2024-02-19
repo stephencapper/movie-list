@@ -14,7 +14,7 @@ const MovieList = (props) => {
               movie={movie}
               currentMovies={props.currentMovies}
               moviesData={props.moviesData}
-              setMoviesData={props.setMoviesData}
+              setUpdateMovie={props.setUpdateMovie}
               setCurrentMovies={props.setCurrentMovies}
               watchedDisplay={props.watchedDisplay}
             />
